@@ -50,6 +50,28 @@ EduPortal is a backend application designed to manage educational resources, inc
 
 ### Setup
 
+### Database Setup
+
+1. **Install MariaDB**: Follow the instructions for your operating system.
+
+2. **Create a Database**:
+
+   ```sql
+   CREATE DATABASE eduportal;
+   CREATE USER 'your_username'@'localhost' IDENTIFIED BY 'your_pass';
+   GRANT ALL PRIVILEGES ON eduportal.* TO 'your_username'@'localhost';
+   FLUSH PRIVILEGES;
+   ```
+
+3. **Configure the Application**: Update the `src/main/resources/application.properties` file:
+
+   ```properties
+   spring.datasource.url=jdbc:mariadb://localhost:3306/eduportal
+   spring.datasource.username=your_username
+   spring.datasource.password=your_pass
+   ```
+### Project Setup
+
 1. **Clone the repository:**
 
    ```bash
