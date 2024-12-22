@@ -123,28 +123,38 @@ Logging is configured to provide detailed information for debugging purposes. Yo
 
 ```mermaid
 erDiagram
-   STUDENT {
-      Long id
+   Student ||--o{ student_courses : enrolls
+   Course ||--o{ student_courses : has
+   Course }|--|| Instructor : taught_by
+
+   Student {
+      Long id PK
       String firstName
       String lastName
       String email
       String password
       String major
    }
-   INSTRUCTOR {
-      Long id
+
+   Instructor {
+      Long id PK
       String firstName
       String lastName
       String email
       String department
    }
-   COURSE {
-      Long id
+
+   Course {
+      Long id PK
       String courseName
       Integer credits
+      Long instructor_id FK
    }
-   STUDENT o{--o{ COURSE : enrolls
-   INSTRUCTOR ||--o{ COURSE : teaches
+
+   student_courses {
+      Long student_id FK
+      Long course_id FK
+   }
 ```
 
 
