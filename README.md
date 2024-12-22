@@ -1,58 +1,63 @@
 # EduPortal Backend
 
-EduPortal is a backend application designed to manage educational resources, including courses, instructors, and students. This project is built using Spring Boot and provides RESTful APIs for managing educational data.
+EduPortal is a robust backend application designed to manage educational resources, including courses, instructors, and students. Built with Spring Boot, it provides RESTful APIs for efficient educational data management.
 
 ## Features
 
-- Manage Courses, Instructors, and Students
-- Secure API endpoints with Spring Security
-- API documentation with Swagger
-- Database integration with MariaDB
-- Exception handling and logging
+- **Course Management**: Create, update, and manage courses.
+- **Instructor Management**: Handle instructor data and assignments.
+- **Student Management**: Manage student information and course enrollments.
+- **Secure API Endpoints**: Implemented with Spring Security.
+- **API Documentation**: Comprehensive documentation using Swagger.
+- **Database Integration**: Utilizes MariaDB for data persistence.
+- **Exception Handling**: Robust error handling and logging.
 
 ## Technologies Used
 
-- Java 17
-- Spring Boot 3.4.1
-- Spring Data JPA
-- Spring Security
-- Spring Validation
-- Swagger for API documentation
-- MariaDB
-- Lombok
+- **Java 17**
+- **Spring Boot 3.4.1**
+- **Spring Data JPA**
+- **Spring Security**
+- **Spring Validation**
+- **Swagger** for API documentation
+- **MariaDB**
+- **Lombok**
 
 ## Project Architecture
 
-1. **Entity**:
-    - **Student**: Student_ID, First_Name, Last_Name, Email, Password, Major, Courses_Selected
-    - **Instructor**: Instructor_ID, First_Name, Last_Name, Email, Department
-    - **Course**: Course_ID, Course_Name, Credits, Instructor_ID
+1. **Entity Layer**:
+   - **Student**: Attributes include ID, First Name, Last Name, Email, Password, Major, and Courses Selected.
+   - **Instructor**: Attributes include ID, First Name, Last Name, Email, and Department.
+   - **Course**: Attributes include ID, Course Name, Credits, and Instructor ID.
 
-2. **Controller**: Layer interacting with the frontend.
-    - **StudentController**: Manages student operations.
-    - **InstructorController**: Manages instructor operations.
+2. **Controller Layer**: Interfaces with the frontend.
+   - **StudentController**: Manages student-related operations.
+   - **InstructorController**: Manages instructor-related operations.
+   - **CourseController**: Manages course-related operations.
 
-3. **Service**: Contains business logic.
-    - **StudentService**: Operations related to students.
-    - **InstructorService**: Operations related to instructors.
+3. **Service Layer**: Contains business logic.
+   - **StudentService**: Handles operations related to students.
+   - **InstructorService**: Handles operations related to instructors.
+   - **CourseService**: Handles operations related to courses.
 
-4. **Repository**: Direct interaction with the database.
-    - **StudentRepository**
-    - **InstructorRepository**
-    - **CourseRepository**
+4. **Repository Layer**: Direct interaction with the database.
+   - **StudentRepository**
+   - **InstructorRepository**
+   - **CourseRepository**
+
 ## Getting Started
 
 ### Prerequisites
 
-- Java 17
-- Maven
-- MariaDB
+- **Java 17**
+- **Maven**
+- **MariaDB**
 
 ### Setup
 
-### Database Setup
+#### Database Setup
 
-1. **Install MariaDB**: Follow the instructions for your operating system.
+1. **Install MariaDB (or Mysql)**: Follow the installation instructions for your operating system.
 
 2. **Create a Database**:
 
@@ -70,40 +75,31 @@ EduPortal is a backend application designed to manage educational resources, inc
    spring.datasource.username=your_username
    spring.datasource.password=your_pass
    ```
+
 ### Project Setup
 
-1. **Clone the repository:**
+1. **Clone the Repository:**
 
    ```bash
    git clone https://github.com/harunkrl/eduportal-backend.git
    cd eduportal-backend
    ```
 
-2. **Configure the database:**
-
-   Update the `application.properties` file with your database credentials:
-
-   ```properties
-   spring.datasource.url=jdbc:mariadb://localhost:3306/eduportal
-   spring.datasource.username=your_username
-   spring.datasource.password=your_pass
-   ```
-
-3. **Build the project:**
+2. **Build the Project:**
 
    ```bash
    mvn clean install
    ```
 
-4. **Run the application:**
+3. **Run the Application:**
 
    ```bash
    mvn spring-boot:run
    ```
 
-5. **Access the application:**
+4. **Access the Application:**
 
-    - API documentation is available at: `http://localhost:8080/swagger-ui.html`
+   - API documentation is available at: `http://localhost:8080/swagger-ui.html`
 
 ## Project Structure
 
@@ -117,7 +113,7 @@ EduPortal is a backend application designed to manage educational resources, inc
 
 ## Logging
 
-Logging is configured to provide detailed information for debugging purposes. You can adjust the logging levels in the `application.properties` file.
+Logging is configured to provide detailed information for debugging purposes. Adjust the logging levels in the `application.properties` file as needed.
 
 ## Entity-Relationship Diagram
 
