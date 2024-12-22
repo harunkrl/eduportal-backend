@@ -4,6 +4,7 @@ import com.eduportal.dto.CourseDTO;
 import com.eduportal.dto.InstructorDTO;
 import com.eduportal.dto.StudentDTO;
 import com.eduportal.dto.request.StudentCreateRequest;
+import com.eduportal.dto.request.StudentUpdateRequest;
 import com.eduportal.entity.Course;
 import com.eduportal.entity.Instructor;
 import com.eduportal.entity.Student;
@@ -64,7 +65,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     @Transactional
-    public StudentDTO updateStudent(Long id, StudentCreateRequest request) {
+    public StudentDTO updateStudent(Long id, StudentUpdateRequest request) {
         Student student = studentRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Öğrenci bulunamadı: " + id));
 

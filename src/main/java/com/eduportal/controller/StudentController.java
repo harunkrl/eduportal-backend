@@ -3,6 +3,7 @@ package com.eduportal.controller;
 import com.eduportal.dto.CourseDTO;
 import com.eduportal.dto.StudentDTO;
 import com.eduportal.dto.request.StudentCreateRequest;
+import com.eduportal.dto.request.StudentUpdateRequest;
 import com.eduportal.dto.response.ApiResponse;
 import com.eduportal.service.StudentService;
 import jakarta.validation.Valid;
@@ -39,7 +40,7 @@ public class StudentController {
     @PutMapping("/{id}")
     public ResponseEntity<ApiResponse<StudentDTO>> updateStudent(
             @PathVariable Long id,
-            @Valid @RequestBody StudentCreateRequest request) {
+            @Valid @RequestBody StudentUpdateRequest request) {
         StudentDTO student = studentService.updateStudent(id, request);
         return ResponseEntity.ok(ApiResponse.success("Öğrenci başarıyla güncellendi", student));
     }
