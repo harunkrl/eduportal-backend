@@ -119,6 +119,36 @@ EduPortal is a backend application designed to manage educational resources, inc
 
 Logging is configured to provide detailed information for debugging purposes. You can adjust the logging levels in the `application.properties` file.
 
+## Entity-Relationship Diagram
+
+```mermaid
+erDiagram
+   STUDENT {
+      Long id
+      String firstName
+      String lastName
+      String email
+      String password
+      String major
+   }
+   INSTRUCTOR {
+      Long id
+      String firstName
+      String lastName
+      String email
+      String department
+   }
+   COURSE {
+      Long id
+      String courseName
+      Integer credits
+   }
+   STUDENT o{--o{ COURSE : enrolls
+   INSTRUCTOR ||--o{ COURSE : teaches
+```
+
+
+
 ## Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request for any improvements or bug fixes.
