@@ -75,7 +75,7 @@ EduPortal is a backend application designed to manage educational resources, inc
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/eduportal-backend.git
+   git clone https://github.com/harunkrl/eduportal-backend.git
    cd eduportal-backend
    ```
 
