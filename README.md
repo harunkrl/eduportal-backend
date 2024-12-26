@@ -122,7 +122,8 @@ erDiagram
    Student ||--o{ student_courses : enrolls
    Course ||--o{ student_courses : has
    Course }|--|| Instructor : taught_by
-
+   Student }o -- o{ Course: has
+   
    Student {
       Long id PK
       String firstName
